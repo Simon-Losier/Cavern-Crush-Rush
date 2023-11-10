@@ -12,4 +12,7 @@ config_version=5
 
 config/name="C:\\Users\\Simon\\Documents\\2023\\new\\DIG-Game-jam-2023\\game"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="mobile"
