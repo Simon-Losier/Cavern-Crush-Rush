@@ -143,6 +143,7 @@ sources/1 = SubResource("TileSetAtlasSource_86s44")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_67mda")
 format = 2
 layer_0/name = "Markings"
