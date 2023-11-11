@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu22k2lci2bar"]
+
+[ext_resource type="Script" path="res://Inventory/InventoryHub.gd" id="1_iiom4"]
+[ext_resource type="Script" path="res://Inventory/PlayerInventory.gd" id="2_81t5d"]
+[ext_resource type="Resource" uid="uid://1qhy7jws6yfa" path="res://Inventory/AxeItemData.tres" id="3_4migx"]
+[ext_resource type="Script" path="res://Inventory/InventoryItem.gd" id="4_j7ryp"]
+[ext_resource type="Resource" uid="uid://chbf08fb1udxa" path="res://Inventory/GreenOreItemData.tres" id="4_wjyoe"]
+
+[sub_resource type="Resource" id="Resource_xej21"]
+script = ExtResource("4_j7ryp")
+item_data = ExtResource("3_4migx")
+stackszie = 1
+max_stacksize = 0
+
+[sub_resource type="Resource" id="Resource_px0f6"]
+script = ExtResource("4_j7ryp")
+item_data = ExtResource("4_wjyoe")
+stackszie = 1
+max_stacksize = 0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iiom4")
+
+[node name="Inventory" type="Node2D" parent="."]
+script = ExtResource("2_81t5d")
+inventory = Array[ExtResource("4_j7ryp")]([SubResource("Resource_xej21"), SubResource("Resource_px0f6")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -278.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_constants/separation = 50
