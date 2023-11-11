@@ -8,14 +8,25 @@ uniform vec3 shadowColor : source_color;
 uniform sampler2D noise : source_color;
 uniform vec2 center = vec2(0.5,0.5);
 
-uniform vec2 numPixels = vec2(16,16);
 uniform float noiseStrength;
 uniform vec3 light;
 uniform float offset = 0.01;
 uniform float shadowThreshold = 0.3;
 
-vec2 pixelateUV(vec2 uv) {
-	return round(uv * numPixels) / numPixels;
+varying vec2 numPixels;
+
+vec2 pixelateUV(vec2 uv, vec2 amount) {
+	return  round(uv * amount+0.5) / amount;
+}
+
+vec2 getWorldPos(vec2 uv, mat4 modelMatrix) {
+	return (modelMatrix * vec4(uv, 0.0, 1.0)).xy;
+}
+
+void vertex() {
+    vec2 worldPos = getWorldPos(VERTEX,MODEL_MATRIX);
+	vec2 worldPosPlus = getWorldPos(VERTEX + vec2(1,1),MODEL_MATRIX);
+	numPixels = worldPosPlus - worldPos;
 }
 
 
@@ -62,8 +73,8 @@ float scaleTime(float x, float rate) {
 	return 1. - pow(2.,-x * rate);
 }
 
-void fragment() st
-	vec2 pixelUV = pixelateUV(UV);
+void fragment() {
+	vec2 pixelUV = pixelateUV(UV,numPixels);
 	float width = 1. - t;
 	float radius = scaleTime(t,explosionRate) *  maxRadius;
 	float alpha = sampleNoiseSDF(pixelUV,radius,width) > 0. ? 1. : 0.;
