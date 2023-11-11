@@ -5,8 +5,6 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_yyeaj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_758dt"]
-font_size = 15
-font_color = Color(0, 0, 0, 1)
 
 [node name="ItemDataUI" type="Control"]
 layout_mode = 3
