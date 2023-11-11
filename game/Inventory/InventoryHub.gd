@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player_inventory : PlayerInventory = $Inventory
+@export var player_inventory : PlayerInventory
 var item_data_ui_scene : PackedScene = preload("res://Inventory/ItemDataUI.tscn")
 @onready var h_box : HBoxContainer = $HBoxContainer
 

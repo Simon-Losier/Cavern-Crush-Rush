@@ -10,11 +10,13 @@
 script = ExtResource("4_j7ryp")
 item_data = ExtResource("3_4migx")
 stackszie = 1
+max_stacksize = 0
 
 [sub_resource type="Resource" id="Resource_px0f6"]
 script = ExtResource("4_j7ryp")
 item_data = ExtResource("4_wjyoe")
 stackszie = 1
+max_stacksize = 0
 
 [node name="Control" type="Control"]
 layout_mode = 3

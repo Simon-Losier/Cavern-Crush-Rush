@@ -1,4 +1,4 @@
-class_name PlayerInventory extends Node2D
+class_name PlayerInventory extends Resource
 
 @export var inventory : Array[InventoryItem]
 
