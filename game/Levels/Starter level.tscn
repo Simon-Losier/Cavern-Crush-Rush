@@ -459,4 +459,4 @@ z_index = 3
 position = Vector2(256, 128)
 
 [node name="Minecart" parent="." instance=ExtResource("4_i36ht")]
-position = Vector2(128, 184)
+position = Vector2(64, 100)

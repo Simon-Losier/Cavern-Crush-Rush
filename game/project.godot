@@ -95,6 +95,14 @@ player_2_action={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Terrain"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Minecart"
+2d_physics/layer_4="Item"
+2d_physics/layer_5="TrackStop"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

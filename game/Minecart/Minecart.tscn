@@ -9,6 +9,8 @@ size = Vector2(16, 10)
 [node name="Minecart" type="RigidBody2D"]
 z_index = 2
 y_sort_enabled = true
+collision_layer = 4
+collision_mask = 18
 gravity_scale = 0.0
 script = ExtResource("1_b1qmp")
 

@@ -9,3 +9,5 @@ func _integrate_forces(state):
 	var vel = state.get_linear_velocity()
 	if(!vertical):
 		state.set_linear_velocity(Vector2(vel.x, 0))
+	else:
+		state.set_linear_velocity(Vector2(0, vel.y))
