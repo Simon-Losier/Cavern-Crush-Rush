@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfpdwwamiuqso"]
+
+[ext_resource type="Script" path="res://Minecart/MinecartMovement.gd" id="1_b1qmp"]
+[ext_resource type="Texture2D" uid="uid://dvkdm1os3vmta" path="res://Artwork/Tiles/tile_0054.png" id="1_fkgr7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqtyn"]
+size = Vector2(16, 10)
+
+[node name="Minecart" type="RigidBody2D"]
+z_index = 2
+y_sort_enabled = true
+gravity_scale = 0.0
+script = ExtResource("1_b1qmp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkgr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_nqtyn")
