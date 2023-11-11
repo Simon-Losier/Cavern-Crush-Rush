@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf2cgvavdqfxw"]
+[gd_scene load_steps=4 format=3 uid="uid://cf2cgvavdqfxw"]
 
-[ext_resource type="PackedScene" uid="uid://ctn7eqqud355b" path="res://Crafting/UIItemDataCraftingButton.tscn" id="1_hxcib"]
+[ext_resource type="Texture2D" uid="uid://dqelvhghg4xmc" path="res://Artwork/Tiles/tile_0126.png" id="1_0h3nv"]
+[ext_resource type="Script" path="res://Crafting/CratingUI.gd" id="1_j5m8o"]
 [ext_resource type="PackedScene" uid="uid://d4kq8ysirku6d" path="res://Crafting/UIItemDataImageOnly.tscn" id="2_iexml"]
 
 [node name="Crafting" type="HBoxContainer"]
 theme_override_constants/separation = 50
+script = ExtResource("1_j5m8o")
 
-[node name="CraftingItemButton" parent="." instance=ExtResource("1_hxcib")]
+[node name="CraftingItemButton" type="Control" parent="."]
 layout_mode = 2
+
+[node name="Button" type="Button" parent="CraftingItemButton"]
+layout_mode = 1
+offset_right = 43.0
+offset_bottom = 41.0
+icon = ExtResource("1_0h3nv")
+icon_alignment = 1
+expand_icon = true
 
 [node name="CraftingItems" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -21,3 +31,5 @@ layout_mode = 2
 
 [node name="ItemDataImageOnly3" parent="CraftingItems" instance=ExtResource("2_iexml")]
 layout_mode = 2
+
+[connection signal="pressed" from="CraftingItemButton/Button" to="." method="_on_button_pressed"]

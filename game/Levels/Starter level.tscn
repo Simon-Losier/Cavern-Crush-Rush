@@ -461,12 +461,12 @@ position = Vector2(32, 128)
 z_index = 3
 position = Vector2(256, 128)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Carfting Station" type="Area2D" parent="."]
 position = Vector2(256, 54)
 
-[node name="Tile0074" type="Sprite2D" parent="Area2D"]
+[node name="Tile0074" type="Sprite2D" parent="Carfting Station"]
 texture = ExtResource("4_s1vnu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carfting Station"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_kxyom")

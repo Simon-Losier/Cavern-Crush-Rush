@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4kq8ysirku6d"]
+[gd_scene load_steps=3 format=3 uid="uid://d4kq8ysirku6d"]
 
 [ext_resource type="Texture2D" uid="uid://ihl2sedk2gpc" path="res://Artwork/Tiles/tile_0128.png" id="1_2mf1r"]
+[ext_resource type="Script" path="res://Crafting/UIItemDataCrafting.gd" id="1_x8pq0"]
 
 [node name="ItemDataImageOnly" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_x8pq0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
