@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5fplw4chlbth"]
+[gd_scene load_steps=3 format=3 uid="uid://c5fplw4chlbth"]
 
 [ext_resource type="PackedScene" uid="uid://b1d3c18iuvrxv" path="res://Players/PlayerBase.tscn" id="1_3ctw0"]
+[ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="2_1ma51"]
 
 [node name="Player" instance=ExtResource("1_3ctw0")]
+
+[node name="ItemExchange" parent="." index="2"]
+player_inventory = ExtResource("2_1ma51")

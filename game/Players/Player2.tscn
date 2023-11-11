@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://clev1ls64ivv1"]
+[gd_scene load_steps=3 format=3 uid="uid://clev1ls64ivv1"]
 
 [ext_resource type="PackedScene" uid="uid://b1d3c18iuvrxv" path="res://Players/PlayerBase.tscn" id="1_1gt6v"]
+[ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="2_0atid"]
 
 [node name="Player" instance=ExtResource("1_1gt6v")]
 is_player_1 = false
 
 [node name="Sprite2D" parent="." index="1"]
 region_rect = Rect2(48, 128, 16, 16)
+
+[node name="ItemExchange" parent="." index="2"]
+player_inventory = ExtResource("2_0atid")
+is_player_1 = false
