@@ -10,6 +10,14 @@ config_version=5
 
 [application]
 
-config/name="C:\\Users\\Simon\\Documents\\2023\\new\\DIG-Game-jam-2023\\game"
+config/name="DIGJam2023"
 config/features=PackedStringArray("4.1", "Forward Plus")
+<<<<<<< Updated upstream
 config/icon="res://icon.svg"
+=======
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
+>>>>>>> Stashed changes
