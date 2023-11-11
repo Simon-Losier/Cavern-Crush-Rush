@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf2cgvavdqfxw"]
+
+[ext_resource type="PackedScene" uid="uid://ctn7eqqud355b" path="res://Crafting/UIItemDataCraftingButton.tscn" id="1_hxcib"]
+[ext_resource type="PackedScene" uid="uid://d4kq8ysirku6d" path="res://Crafting/UIItemDataImageOnly.tscn" id="2_iexml"]
+
+[node name="Crafting" type="HBoxContainer"]
+theme_override_constants/separation = 50
+
+[node name="CraftingItemButton" parent="." instance=ExtResource("1_hxcib")]
+layout_mode = 2
+
+[node name="CraftingItems" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="ItemDataImageOnly" parent="CraftingItems" instance=ExtResource("2_iexml")]
+layout_mode = 2
+
+[node name="ItemDataImageOnly2" parent="CraftingItems" instance=ExtResource("2_iexml")]
+layout_mode = 2
+
+[node name="ItemDataImageOnly3" parent="CraftingItems" instance=ExtResource("2_iexml")]
+layout_mode = 2

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4kq8ysirku6d"]
+
+[ext_resource type="Texture2D" uid="uid://ihl2sedk2gpc" path="res://Artwork/Tiles/tile_0128.png" id="1_2mf1r"]
+
+[node name="ItemDataImageOnly" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2mf1r")
