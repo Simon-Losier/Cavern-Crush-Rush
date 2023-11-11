@@ -1,7 +1,6 @@
 shader_type canvas_item;
 
 //needs to be manually adjusted when fire placed
-uniform float numPixels = 16.;
 uniform vec3 outerColor : source_color;
 uniform vec3 innerColor : source_color;
 uniform float colorThreshold = 0.05;
@@ -12,8 +11,20 @@ uniform float width;
 uniform float height;
 uniform vec2 flameCenter;
 
-vec2 pixelateUV(vec2 uv, float amount) {
-	return  round(uv * amount) / amount;
+varying vec2 numPixels;
+
+vec2 pixelateUV(vec2 uv, vec2 amount) {
+	return  round(uv * amount+0.5) / amount;
+}
+
+vec2 getWorldPos(vec2 uv, mat4 modelMatrix) {
+	return (modelMatrix * vec4(uv, 0.0, 1.0)).xy;
+}
+
+void vertex() {
+    vec2 worldPos = getWorldPos(VERTEX,MODEL_MATRIX);
+	vec2 worldPosPlus = getWorldPos(VERTEX + vec2(1,1),MODEL_MATRIX);
+	numPixels = worldPosPlus - worldPos;
 }
 
 float sdEgg( in vec2 p, float a,in float b, in float h ) 
