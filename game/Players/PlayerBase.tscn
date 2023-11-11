@@ -8,10 +8,10 @@ size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 13
+collision_mask = 41
 script = ExtResource("1_1ch4e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MainCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ytfv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

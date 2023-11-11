@@ -102,6 +102,7 @@ player_2_action={
 2d_physics/layer_3="Minecart"
 2d_physics/layer_4="Item"
 2d_physics/layer_5="TrackStop"
+2d_physics/layer_6="MinecartVertical"
 
 [rendering]
 
