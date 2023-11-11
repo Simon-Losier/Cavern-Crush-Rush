@@ -12,12 +12,9 @@ config_version=5
 
 config/name="DIGJam2023"
 config/features=PackedStringArray("4.1", "Forward Plus")
-<<<<<<< Updated upstream
-config/icon="res://icon.svg"
-=======
+<<<<<<<Updatedupstreamconfig/icon="res://icon.svg"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
->>>>>>> Stashed changes
