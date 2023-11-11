@@ -160,8 +160,6 @@ layer_1/tile_data = PackedInt32Array(524297, 65537, 1, 393225, 65537, 1, 393227,
 
 [node name="Player" parent="." instance=ExtResource("2_jtask")]
 position = Vector2(32, 128)
-script = null
 
 [node name="Player2" parent="." instance=ExtResource("3_gwgay")]
 position = Vector2(256, 128)
-script = null
