@@ -2,6 +2,7 @@ class_name PlayerInventory extends Resource
 
 ## Signals
 signal inventory_updated
+# Also opens doors, because there is only 3 hours left of the jam
 signal exchanging_item(is_player_1 : bool)
 
 ## Variables
@@ -9,6 +10,7 @@ signal exchanging_item(is_player_1 : bool)
 
 ## Functions
 func add_item(item : ItemData) -> void:
+	print("Adding item")
 	var stackable = false
 	
 	for inventory_item in inventory:
@@ -26,10 +28,11 @@ func add_item(item : ItemData) -> void:
 	emit_signal("inventory_updated")
 			
 func remove_item(item : ItemData) -> void:
+	print("Removing item")
 	for inventory_item in inventory:
 		if inventory_item.item_data == item:
 			# If there is no more items in the stack, remove the item from the inventory entirely
-			if inventory_item.stackszie == 0:
+			if inventory_item.stackszie <= 1:
 				inventory.erase(inventory_item)
 			# Otherwise, only deduct the stack by one
 			else:
