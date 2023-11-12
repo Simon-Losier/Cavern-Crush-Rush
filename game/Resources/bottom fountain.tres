@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://vcyv8jgh3b43"]
+
+[ext_resource type="Texture2D" uid="uid://c1gy5lc6shll3" path="res://Artwork/Individual Art/tile_0031.png" id="1_hcy3n"]
+[ext_resource type="Texture2D" uid="uid://dgnjky5d28hb0" path="res://Artwork/Individual Art/tile_0032.png" id="2_k7u76"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hcy3n")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k7u76")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]

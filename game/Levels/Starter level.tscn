@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdxl65tcj1dla"]
+[gd_scene load_steps=8 format=3 uid="uid://chlnihyneyy1b"]
 
 [ext_resource type="Texture2D" uid="uid://bxukdhipw6ogt" path="res://Artwork/tilemap_packed.png" id="1_vy5rv"]
 [ext_resource type="PackedScene" uid="uid://c5fplw4chlbth" path="res://Players/Player1.tscn" id="2_wfaht"]
 [ext_resource type="PackedScene" uid="uid://clev1ls64ivv1" path="res://Players/Player2.tscn" id="3_v8d5n"]
 [ext_resource type="PackedScene" uid="uid://cfpdwwamiuqso" path="res://Minecart/Minecart.tscn" id="4_i36ht"]
+[ext_resource type="PackedScene" uid="uid://sby0qln57wwd" path="res://Objects/blocks.tscn" id="5_8u11c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86s44"]
 texture = ExtResource("1_vy5rv")
@@ -452,7 +453,7 @@ layer_1/tile_data = PackedInt32Array(393227, 1, 4, 458763, 1, 4, 524299, 1, 4, 5
 
 [node name="Player" parent="." instance=ExtResource("2_wfaht")]
 z_index = 3
-position = Vector2(32, 128)
+position = Vector2(92, 82)
 collision_mask = 41
 
 [node name="Player2" parent="." instance=ExtResource("3_v8d5n")]
@@ -465,3 +466,6 @@ position = Vector2(64, 100)
 custom_integrator = false
 lock_rotation = true
 linear_damp = 2.0
+
+[node name="Chest" parent="." instance=ExtResource("5_8u11c")]
+position = Vector2(118, 110)
