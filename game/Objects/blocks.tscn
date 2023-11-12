@@ -29,8 +29,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxkm1"]
-size = Vector2(14, 23)
+[sub_resource type="CircleShape2D" id="CircleShape2D_edsrl"]
+radius = 15.0
 
 [node name="Chest" type="Area2D"]
 collision_layer = 2
@@ -42,11 +42,9 @@ player_inventory = ExtResource("3_2cx46")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4vy8a")
 animation = &"nothing"
-frame_progress = 0.506343
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.5)
-shape = SubResource("RectangleShape2D_lxkm1")
+shape = SubResource("CircleShape2D_edsrl")
 
 [node name="Chest" type="Node2D" parent="."]
 

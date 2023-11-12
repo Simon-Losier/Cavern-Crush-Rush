@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkyw2"]
 size = Vector2(16, 21)
 
-[node name="Door Group" type="Area2D"]
+[node name="Door" type="Area2D"]
 script = ExtResource("1_cki27")
 
 [node name="Door2" type="AnimatedSprite2D" parent="."]
