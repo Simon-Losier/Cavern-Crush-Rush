@@ -3,6 +3,7 @@ extends Area2D
 ## Variables
 # Each of our animated frames
 @onready var elements : Array[AnimatedSprite2D] = [%DoorFrame, %LeftHead, %LeftFountain, %RightHead, %RightFountain]
+@onready var sounds = %Sounds
 # Is the door opened? Both doors need to be opened in order for the next level to be loaded
 var activated : bool = false
 # Player inventory
@@ -32,3 +33,4 @@ func _toggle_state(is_player_1 : bool):
 					i.play("open")
 				door_data.doors_enabled += 1
 			activated = !activated
+			sounds.play()
