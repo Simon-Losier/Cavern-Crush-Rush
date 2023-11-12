@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctir3ndbqtwo0"]
+[gd_scene load_steps=8 format=3 uid="uid://ctir3ndbqtwo0"]
 
 [ext_resource type="Texture2D" uid="uid://b7kxwyru5gdw5" path="res://Artwork/Tiles/tile_0014.png" id="1_sjmd1"]
 [ext_resource type="Script" path="res://Menus/UIMainMenu.gd" id="1_wfq0s"]
 [ext_resource type="Texture2D" uid="uid://j2adgws3jd8d" path="res://Artwork/Banner 1.1.png" id="2_yep6m"]
+[ext_resource type="AudioStream" uid="uid://qwk2lb4c3umh" path="res://Sound/Music/Normal_Music.wav" id="4_6cvob"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpg4r"]
 bg_color = Color(0, 0, 0, 1)
@@ -90,6 +91,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lpg4r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ewo7n")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qweag")
 text = "Quit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6cvob")
+autoplay = true
 
 [connection signal="pressed" from="WindowPanel/MenuOptionsVBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="WindowPanel/MenuOptionsVBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
