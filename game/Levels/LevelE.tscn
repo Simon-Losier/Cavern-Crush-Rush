@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://co8x48jdr5aih"]
+[gd_scene load_steps=6 format=3 uid="uid://co8x48jdr5aih"]
 
 [ext_resource type="PackedScene" uid="uid://dd6wjqi635sva" path="res://Levels/LevelTile.tscn" id="1_mo4qo"]
 [ext_resource type="PackedScene" uid="uid://cb8tfxhlalqg8" path="res://Objects/Door.tscn" id="2_1xrjl"]
 [ext_resource type="PackedScene" uid="uid://cx7wk6ux832b4" path="res://Objects/wall.tscn" id="3_lmfa6"]
 [ext_resource type="PackedScene" uid="uid://sby0qln57wwd" path="res://Objects/blocks.tscn" id="4_bny6h"]
+[ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="5_rkd45"]
 
 [node name="LevelTile" instance=ExtResource("1_mo4qo")]
 
@@ -42,3 +43,4 @@ position = Vector2(24, 168)
 
 [node name="Chest4" parent="." index="16" instance=ExtResource("4_bny6h")]
 position = Vector2(184, 72)
+player_inventory = ExtResource("5_rkd45")
