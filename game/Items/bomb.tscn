@@ -1,18 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cebnxq1cu1fym"]
+[gd_scene load_steps=4 format=3 uid="uid://cebnxq1cu1fym"]
 
-[ext_resource type="Script" path="res://Items/bombCollision.gd" id="1_0epi0"]
+[ext_resource type="Texture2D" uid="uid://cpmf5f414723j" path="res://Artwork/bomb.png" id="1_b8m81"]
+[ext_resource type="Script" path="res://Items/bombArea.gd" id="2_v5qg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvec4"]
-size = Vector2(12, 12)
+size = Vector2(51, 50)
 
-[node name="bomb" type="Node2D"]
+[node name="Area2D" type="Area2D"]
+collision_layer = 256
+collision_mask = 128
+script = ExtResource("2_v5qg6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 4
 scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_b8m81")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kvec4")
-script = ExtResource("1_0epi0")
+
+[node name="bomb" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
