@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bb23a7mssmr3h"]
+[gd_scene load_steps=10 format=3 uid="uid://rib6g57fpg1q"]
 
 [ext_resource type="Texture2D" uid="uid://bxukdhipw6ogt" path="res://Artwork/tilemap_packed.png" id="1_10vxo"]
 [ext_resource type="PackedScene" uid="uid://cebnxq1cu1fym" path="res://Items/bomb.tscn" id="2_chcq0"]
 [ext_resource type="PackedScene" uid="uid://c5fplw4chlbth" path="res://Players/Player1.tscn" id="3_aqxqq"]
 [ext_resource type="PackedScene" uid="uid://clev1ls64ivv1" path="res://Players/Player2.tscn" id="4_thjhy"]
 [ext_resource type="PackedScene" uid="uid://cx7wk6ux832b4" path="res://Objects/wall.tscn" id="5_yw21k"]
-[ext_resource type="PackedScene" uid="uid://ca7d414rjikv8" path="res://Objects/blocks.tscn" id="6_y0648"]
-[ext_resource type="PackedScene" uid="uid://d2sohacy78iv6" path="res://Objects/Door.tscn" id="7_rbbbc"]
+[ext_resource type="PackedScene" uid="uid://sby0qln57wwd" path="res://Objects/blocks.tscn" id="6_y0648"]
+[ext_resource type="PackedScene" uid="uid://cb8tfxhlalqg8" path="res://Objects/Door.tscn" id="7_rbbbc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_86s44"]
 texture = ExtResource("1_10vxo")
@@ -196,3 +196,4 @@ position = Vector2(72, 40)
 
 [node name="Door2" parent="." instance=ExtResource("7_rbbbc")]
 position = Vector2(248, 40)
+scale = Vector2(1.02457, 1.00072)

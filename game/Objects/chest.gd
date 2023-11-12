@@ -1,6 +1,8 @@
 extends Area2D
 
-
+@export var item: ItemData
+@export var player_inventory: PlayerInventory
+var open: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -14,5 +16,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("Chest opened")
-	$AnimatedSprite2D.play("open")
+	if (!open):
+		$AnimatedSprite2D.play("open")
+		player_inventory.add_item(item)
+		open = true
