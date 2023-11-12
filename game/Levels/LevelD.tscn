@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn33y0sl7nxg1"]
+[gd_scene load_steps=6 format=3 uid="uid://bn33y0sl7nxg1"]
 
 [ext_resource type="PackedScene" uid="uid://dd6wjqi635sva" path="res://Levels/LevelTile.tscn" id="1_8d03j"]
 [ext_resource type="PackedScene" uid="uid://cb8tfxhlalqg8" path="res://Objects/Door.tscn" id="2_8id17"]
 [ext_resource type="PackedScene" uid="uid://sby0qln57wwd" path="res://Objects/blocks.tscn" id="3_invbc"]
+[ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="4_f1b1a"]
 [ext_resource type="PackedScene" uid="uid://cx7wk6ux832b4" path="res://Objects/wall.tscn" id="4_sbu82"]
 
 [node name="LevelTile" instance=ExtResource("1_8d03j")]
@@ -18,12 +19,15 @@ position = Vector2(232, 56)
 
 [node name="Chest" parent="." index="8" instance=ExtResource("3_invbc")]
 position = Vector2(264, 136)
+player_inventory = ExtResource("4_f1b1a")
 
 [node name="Chest2" parent="." index="9" instance=ExtResource("3_invbc")]
 position = Vector2(200, 136)
+player_inventory = ExtResource("4_f1b1a")
 
 [node name="Chest3" parent="." index="10" instance=ExtResource("3_invbc")]
 position = Vector2(296, 176)
+player_inventory = ExtResource("4_f1b1a")
 
 [node name="Chest4" parent="." index="11" instance=ExtResource("3_invbc")]
 position = Vector2(32, 104)

@@ -42,3 +42,7 @@ region_rect = Rect2(48, 128, 16, 16)
 [node name="ItemExchange" parent="." index="3"]
 player_inventory = ExtResource("2_0atid")
 is_player_1 = false
+
+[node name="Marker2D" parent="." index="4"]
+player_inventory = ExtResource("2_0atid")
+is_player_1 = false
