@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cebnxq1cu1fym"]
+[gd_scene load_steps=5 format=3 uid="uid://cebnxq1cu1fym"]
 
 [ext_resource type="Texture2D" uid="uid://cpmf5f414723j" path="res://Artwork/bomb.png" id="1_b8m81"]
 [ext_resource type="Script" path="res://Items/bombArea.gd" id="2_v5qg6"]
+[ext_resource type="AudioStream" uid="uid://bh4y1kxang8s4" path="res://Sound/SFX/Explosions.wav" id="3_lpdwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvec4"]
 size = Vector2(51, 50)
@@ -24,6 +25,10 @@ shape = SubResource("RectangleShape2D_kvec4")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="BombSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_lpdwk")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

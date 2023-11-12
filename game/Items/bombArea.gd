@@ -1,8 +1,13 @@
 extends Area2D
 
+## Variables
 var objToRemove = []
 
+@onready var bomb_sound = %BombSound
+
+## Functions
 func _on_timer_timeout():
+	bomb_sound.play()
 	boom()
 
 func boom():
