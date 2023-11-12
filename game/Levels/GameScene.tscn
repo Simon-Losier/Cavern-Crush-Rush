@@ -13,4 +13,5 @@ door_data = ExtResource("2_f1ly3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fsf6m")
+volume_db = -15.0
 autoplay = true

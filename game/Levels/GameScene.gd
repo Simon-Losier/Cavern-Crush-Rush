@@ -2,6 +2,8 @@ extends Node2D
 
 ## Variables
 @onready var level_tile = $LevelTile
+@onready var player_1_inv : PlayerInventory = preload("res://Inventory/PlayerInventory1.tres")
+@onready var player_2_inv : PlayerInventory = preload("res://Inventory/PlayerInventory2.tres")
 
 @export var door_data : DoorData
 
@@ -24,3 +26,9 @@ func _next_level() -> void:
 	add_child(new_scene)
 	door_data.doors_enabled = 0
 	level_tile = new_scene
+
+func _physics_process(delta):
+	if(Input.is_action_just_pressed("reset")):
+		player_1_inv.inventory = []
+		player_2_inv.inventory = []
+		get_tree().reload_current_scene()
