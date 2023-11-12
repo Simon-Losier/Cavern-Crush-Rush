@@ -2,6 +2,7 @@ class_name PlayerInventory extends Resource
 
 ## Signals
 signal inventory_updated
+# Also opens doors, because there is only 3 hours left of the jam
 signal exchanging_item(is_player_1 : bool)
 
 ## Variables

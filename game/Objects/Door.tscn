@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb8tfxhlalqg8"]
+[gd_scene load_steps=11 format=3 uid="uid://cb8tfxhlalqg8"]
 
 [ext_resource type="Texture2D" uid="uid://8seu3axa72ax" path="res://Artwork/Individual Art/tile_0045.png" id="1_bg2y0"]
 [ext_resource type="Script" path="res://Objects/Door.gd" id="1_cki27"]
 [ext_resource type="Texture2D" uid="uid://bsgub53j6tra3" path="res://Artwork/Individual Art/tile_0033.png" id="2_r53nr"]
+[ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="2_ri3tg"]
+[ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="3_wp5wo"]
+[ext_resource type="Resource" uid="uid://dsduuwn7yuj8p" path="res://Objects/DoorDataFile.tres" id="4_aa351"]
 [ext_resource type="SpriteFrames" uid="uid://bqci72dl7i38r" path="res://Resources/Sprite.tres" id="4_ktbc4"]
 [ext_resource type="SpriteFrames" uid="uid://vcyv8jgh3b43" path="res://Resources/bottom fountain.tres" id="5_si02p"]
 
@@ -26,35 +29,45 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkyw2"]
-size = Vector2(16, 21)
+size = Vector2(16, 32)
 
 [node name="Door" type="Area2D"]
+collision_layer = 512
+collision_mask = 2
 script = ExtResource("1_cki27")
+player_1_inventory = ExtResource("2_ri3tg")
+player_2_inventory = ExtResource("3_wp5wo")
+door_data = ExtResource("4_aa351")
 
-[node name="Door2" type="AnimatedSprite2D" parent="."]
+[node name="DoorFrame" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_o3cqr")
 animation = &"closed"
 
-[node name="LH" type="AnimatedSprite2D" parent="."]
+[node name="LeftHead" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-16, 0)
 sprite_frames = ExtResource("4_ktbc4")
 animation = &"closed"
 
-[node name="LF" type="AnimatedSprite2D" parent="."]
+[node name="LeftFountain" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-16, 16)
 sprite_frames = ExtResource("5_si02p")
 animation = &"closed"
 
-[node name="RH" type="AnimatedSprite2D" parent="."]
+[node name="RightHead" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(16, 0)
 sprite_frames = ExtResource("4_ktbc4")
 animation = &"closed"
 
-[node name="RF" type="AnimatedSprite2D" parent="."]
+[node name="RightFountain" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(16, 16)
 sprite_frames = ExtResource("5_si02p")
 animation = &"closed"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+[node name="DoorArea" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_lkyw2")

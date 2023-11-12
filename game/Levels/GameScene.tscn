@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckhir0mr3qjpq"]
+
+[ext_resource type="Script" path="res://Levels/GameScene.gd" id="1_7y04r"]
+[ext_resource type="Resource" uid="uid://dsduuwn7yuj8p" path="res://Objects/DoorDataFile.tres" id="2_f1ly3"]
+[ext_resource type="PackedScene" uid="uid://bqr2ft5066jl0" path="res://Levels/LevelA.tscn" id="2_qeys8"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_7y04r")
+door_data = ExtResource("2_f1ly3")
+
+[node name="LevelTile" parent="." instance=ExtResource("2_qeys8")]

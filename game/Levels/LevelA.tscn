@@ -8,18 +8,7 @@
 [node name="LevelTile" instance=ExtResource("1_abenk")]
 
 [node name="TileMap" parent="." index="0"]
-layer_1/name = "Fences"
 layer_1/tile_data = PackedInt32Array(393217, 393217, 6, 393221, 262145, 6, 393222, 327681, 6, 393223, 327681, 6, 393224, 327681, 6, 524299, 327681, 6, 524300, 393217, 6, 524304, 262145, 6, 524305, 327681, 6, 524306, 327681, 6)
-layer_2/name = "Rail"
-layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(720904, 655361, 7, 720905, 655361, 5, 720906, 655361, 5, 720907, 655361, 7, 720903, 458753, 6, 720908, 524289, 6)
-layer_3/name = "Front"
-layer_3/enabled = true
-layer_3/modulate = Color(1, 1, 1, 1)
-layer_3/y_sort_enabled = false
-layer_3/y_sort_origin = 0
-layer_3/z_index = 4
-layer_3/tile_data = PackedInt32Array(786433, 131073, 2, 786434, 131073, 2, 786435, 131073, 2, 786436, 131073, 2, 786437, 131073, 2, 786438, 131073, 2, 786439, 131073, 2, 786440, 131073, 2, 786441, 131073, 2, 786442, 131073, 2, 786443, 131073, 2, 786444, 131073, 2, 786445, 131073, 2, 786446, 131073, 2, 786447, 131073, 2, 786448, 131073, 2, 786449, 131073, 2, 786450, 131073, 2)
 
 [node name="Door" parent="." index="6" instance=ExtResource("2_kabqt")]
 position = Vector2(56, 56)

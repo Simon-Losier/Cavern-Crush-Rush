@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DIGJam2023"
-run/main_scene="res://Levels/Starter level.tscn"
+run/main_scene="res://Levels/GameScene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -122,6 +122,7 @@ player_2_insert={
 2d_physics/layer_7="MinecartInventory"
 2d_physics/layer_8="BreakableWall"
 2d_physics/layer_9="BombExplosion"
+2d_physics/layer_10="Doors"
 
 [rendering]
 

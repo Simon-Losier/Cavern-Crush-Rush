@@ -38,7 +38,7 @@ position = Vector2(40, 128)
 position = Vector2(88, 128)
 
 [node name="Chest3" parent="." index="15" instance=ExtResource("4_bny6h")]
-position = Vector2(56, 168)
+position = Vector2(24, 168)
 
 [node name="Chest4" parent="." index="16" instance=ExtResource("4_bny6h")]
 position = Vector2(184, 72)

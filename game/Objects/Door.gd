@@ -1,27 +1,34 @@
 extends Area2D
 
-var activated = false
-# Called when the node enters the scene tree for the first time.
+## Variables
+# Each of our animated frames
+@onready var elements : Array[AnimatedSprite2D] = [%DoorFrame, %LeftHead, %LeftFountain, %RightHead, %RightFountain]
+# Is the door opened? Both doors need to be opened in order for the next level to be loaded
+var activated : bool = false
+# Player inventory
+@export var player_1_inventory : PlayerInventory 
+@export var player_2_inventory : PlayerInventory
+# Door resource
+@export var door_data : DoorData
+
+## Functions
 func _ready():
-	pass
+	# Connect signals
+	player_1_inventory.exchanging_item.connect(_toggle_state)
+	player_2_inventory.exchanging_item.connect(_toggle_state)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("player_1_action"):
-		if (activated):
-			deactivate()
-		else:
-			activate()
-
-func activate():
-	activated = true
-	var elements = [$Door2, $LH, $LF, $RH, $RF]
-	for element in elements:
-		element.play("open")
-
-func deactivate():
-	activated = false
-	var elements = [$Door2, $LH, $LF, $RH, $RF]
-	for element in elements:
-		element.play("closed")
+func _toggle_state(is_player_1 : bool):
+	# First, check if there is a player in this area
+	if(has_overlapping_bodies()):
+		var bodies : Array[Node2D] = get_overlapping_bodies()
+		# Is the door the same as the player. If so, toggle this door
+		if((bodies[0].is_player_1 && is_player_1) or (bodies[0].is_player_1 == false && is_player_1 == false)):
+			if(activated):
+				for i in elements:
+					i.play("closed")
+				door_data.doors_enabled -= 1
+			else:
+				for i in elements:
+					i.play("open")
+				door_data.doors_enabled += 1
+			activated = !activated

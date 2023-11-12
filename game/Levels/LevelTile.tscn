@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd6wjqi635sva"]
+[gd_scene load_steps=8 format=3 uid="uid://dd6wjqi635sva"]
 
 [ext_resource type="TileSet" uid="uid://djpmoodhpwhv7" path="res://Levels/LevelTileset.tres" id="1_7qs61"]
 [ext_resource type="PackedScene" uid="uid://cfpdwwamiuqso" path="res://Minecart/Minecart.tscn" id="2_dc8si"]
 [ext_resource type="PackedScene" uid="uid://dqpbmko462k2r" path="res://Objects/ForceDirection.tscn" id="3_pcmmx"]
 [ext_resource type="Script" path="res://Objects/ForceDirection.gd" id="4_ewmv5"]
+[ext_resource type="PackedScene" uid="uid://c5fplw4chlbth" path="res://Players/Player1.tscn" id="5_0yj3h"]
+[ext_resource type="PackedScene" uid="uid://clev1ls64ivv1" path="res://Players/Player2.tscn" id="6_6smlc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd2ra"]
 size = Vector2(4, 16)
@@ -64,3 +66,9 @@ script = ExtResource("4_ewmv5")
 position = Vector2(174, 184)
 target_position = Vector2(-16, 0)
 script = ExtResource("4_ewmv5")
+
+[node name="Player" parent="." instance=ExtResource("5_0yj3h")]
+position = Vector2(64, 180)
+
+[node name="Player2" parent="." instance=ExtResource("6_6smlc")]
+position = Vector2(256, 180)
