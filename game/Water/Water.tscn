@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://clm78qnr8tnip"]
+
+[ext_resource type="PackedScene" uid="uid://nxeo45cgau1k" path="res://Items/WaterPrefab.tscn" id="1_00daf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3dq2"]
+size = Vector2(320, 100)
+
+[node name="Water" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(160, 150)
+shape = SubResource("RectangleShape2D_p3dq2")
+
+[node name="WaterPrefab" parent="." instance=ExtResource("1_00daf")]
