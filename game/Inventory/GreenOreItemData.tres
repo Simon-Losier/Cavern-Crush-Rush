@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://chbf08fb1udxa"]
+
+[ext_resource type="Texture2D" uid="uid://dqelvhghg4xmc" path="res://Artwork/Tiles/tile_0126.png" id="1_0fj06"]
+[ext_resource type="Script" path="res://Inventory/ItemData.gd" id="2_xngsp"]
+
+[resource]
+script = ExtResource("2_xngsp")
+item_name = "Green Ore"
+item_image = ExtResource("1_0fj06")

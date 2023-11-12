@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5fplw4chlbth"]
+[gd_scene load_steps=4 format=3 uid="uid://c5fplw4chlbth"]
 
 [ext_resource type="PackedScene" uid="uid://b1d3c18iuvrxv" path="res://Players/PlayerBase.tscn" id="1_3ctw0"]
+[ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="2_1ma51"]
+[ext_resource type="PackedScene" uid="uid://bu22k2lci2bar" path="res://Inventory/InventoryHub.tscn" id="2_j3ywu"]
 
 [node name="Player" instance=ExtResource("1_3ctw0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="Control" parent="CanvasLayer" index="0" instance=ExtResource("2_j3ywu")]
+player_inventory = ExtResource("2_1ma51")
+
+[node name="ItemExchange" parent="." index="3"]
+player_inventory = ExtResource("2_1ma51")

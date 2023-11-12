@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://nxeo45cgau1k"]
+
+[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="1_x055n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gjqua"]
+seed = 55
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uw6k7"]
+noise = SubResource("FastNoiseLite_gjqua")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kt5fp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hef0e"]
+noise = SubResource("FastNoiseLite_kt5fp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iyfjh"]
+seed = 37
+frequency = 0.0155
+fractal_lacunarity = 2.14
+fractal_gain = 0.365
+fractal_weighted_strength = 0.55
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cmu3o"]
+seamless = true
+noise = SubResource("FastNoiseLite_iyfjh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qcc0o"]
+shader = ExtResource("1_x055n")
+shader_parameter/t = 0.32
+shader_parameter/noiseStrength = 0.13
+shader_parameter/causticThreshold = 0.408
+shader_parameter/waterColor = Color(0, 0.2, 0.576471, 1)
+shader_parameter/foamColor = Color(0.831373, 0.831373, 0.831373, 1)
+shader_parameter/waveHeight = 0.015
+shader_parameter/waveWidth = 0.03
+shader_parameter/waveEdgeWidth = 0.035
+shader_parameter/edgeNoise = SubResource("NoiseTexture2D_uw6k7")
+shader_parameter/waveNoise = SubResource("NoiseTexture2D_cmu3o")
+shader_parameter/oppWaveNoise = SubResource("NoiseTexture2D_hef0e")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_44h0l"]
+
+[node name="WaterPrefab" type="Sprite2D"]
+material = SubResource("ShaderMaterial_qcc0o")
+position = Vector2(160.5, 99)
+scale = Vector2(321, 198)
+texture = SubResource("CanvasTexture_44h0l")

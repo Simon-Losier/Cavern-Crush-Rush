@@ -1,18 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1d3c18iuvrxv"]
+[gd_scene load_steps=5 format=3 uid="uid://b1d3c18iuvrxv"]
 
 [ext_resource type="Script" path="res://Players/PlayerMovement.gd" id="1_1ch4e"]
 [ext_resource type="Texture2D" uid="uid://bxukdhipw6ogt" path="res://Artwork/tilemap_packed.png" id="1_ivnt3"]
+[ext_resource type="Script" path="res://Players/ItemExchange.gd" id="3_i58re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytfv6"]
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 233
 script = ExtResource("1_1ch4e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MainCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ytfv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ivnt3")
 region_enabled = true
 region_rect = Rect2(48, 112, 16, 16)
+
+[node name="ItemExchange" type="Node" parent="."]
+script = ExtResource("3_i58re")
