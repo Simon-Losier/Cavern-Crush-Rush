@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjixxm6hknkyi"]
+
+[ext_resource type="Shader" path="res://Shaders/Explosion.gdshader" id="1_1grx6"]
+[ext_resource type="Script" path="res://Items/ExplosionEffect.gd" id="2_tecxp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rvsu3"]
+seed = 120
+frequency = 0.007
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vkwak"]
+noise = SubResource("FastNoiseLite_rvsu3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qly7"]
+shader = ExtResource("1_1grx6")
+shader_parameter/t = 0.697
+shader_parameter/maxRadius = 0.41
+shader_parameter/explosionRate = 10.0
+shader_parameter/smokeColor = Color(0.580392, 0.580392, 0.580392, 1)
+shader_parameter/shadowColor = Color(0.258824, 0.258824, 0.258824, 1)
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/noiseStrength = 0.14
+shader_parameter/light = Vector3(-1.41, 2.495, 0.465)
+shader_parameter/offset = 0.01
+shader_parameter/shadowThreshold = 0.3
+shader_parameter/noise = SubResource("NoiseTexture2D_vkwak")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gbrsf"]
+
+[node name="Explosion" type="Sprite2D"]
+material = SubResource("ShaderMaterial_3qly7")
+position = Vector2(13.25, 13.25)
+scale = Vector2(27.5, 27.5)
+texture = SubResource("CanvasTexture_gbrsf")
+script = ExtResource("2_tecxp")
+shad_material = SubResource("ShaderMaterial_3qly7")
