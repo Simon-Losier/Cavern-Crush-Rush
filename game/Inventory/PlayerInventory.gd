@@ -9,16 +9,20 @@ signal exchanging_item(is_player_1 : bool)
 
 ## Functions
 func add_item(item : ItemData) -> void:
+	var stackable = false
+	
 	for inventory_item in inventory:
 		# If an item already exists in the inventory, increment the stack of the item by one
 		if inventory_item.item_data == item && inventory_item.stackszie != inventory_item.max_stacksize:
 			inventory_item.stackszie += 1
-		# Otherwise, add the item to the array for the first time
-		else:
-			var new_inventory_item : InventoryItem
-			new_inventory_item.item_data = item
-			new_inventory_item.stackszie += 1
-			inventory.append(new_inventory_item)
+			stackable = true
+			
+	if (!stackable):
+		var new_inventory_item : InventoryItem = InventoryItem.new()
+		new_inventory_item.item_data = item
+		new_inventory_item.stackszie += 1
+		inventory.append(new_inventory_item)
+		
 	emit_signal("inventory_updated")
 			
 func remove_item(item : ItemData) -> void:

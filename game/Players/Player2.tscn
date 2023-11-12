@@ -1,14 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://clev1ls64ivv1"]
+[gd_scene load_steps=4 format=3 uid="uid://clev1ls64ivv1"]
 
 [ext_resource type="PackedScene" uid="uid://b1d3c18iuvrxv" path="res://Players/PlayerBase.tscn" id="1_1gt6v"]
 [ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="2_0atid"]
+[ext_resource type="Script" path="res://Inventory/InventoryHub.gd" id="2_80jwb"]
 
 [node name="Player" instance=ExtResource("1_1gt6v")]
 is_player_1 = false
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = -12.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_80jwb")
+player_inventory = ExtResource("2_0atid")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -290.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = 110.0
+grow_horizontal = 0
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Sprite2D" parent="." index="2"]
 region_rect = Rect2(48, 128, 16, 16)
 
-[node name="ItemExchange" parent="." index="2"]
+[node name="ItemExchange" parent="." index="3"]
 player_inventory = ExtResource("2_0atid")
 is_player_1 = false

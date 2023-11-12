@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://du7topoaawsx6"]
+[gd_scene load_steps=3 format=3 uid="uid://du7topoaawsx6"]
 
 [ext_resource type="Shader" path="res://Shaders/Explosion.gdshader" id="1_2o8tv"]
-[ext_resource type="Texture2D" uid="uid://do5me6v0wyrt4" path="res://icon.svg" id="2_ad0ks"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_miy8q"]
 shader = ExtResource("1_2o8tv")
+shader_parameter/t = null
+shader_parameter/maxRadius = null
+shader_parameter/explosionRate = null
+shader_parameter/smokeColor = null
+shader_parameter/shadowColor = null
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/noiseStrength = null
+shader_parameter/light = null
+shader_parameter/offset = 0.01
+shader_parameter/shadowThreshold = 0.3
 
 [node name="ExplosionPrefab" type="Sprite2D"]
 material = SubResource("ShaderMaterial_miy8q")
 position = Vector2(1, -2)
-texture = ExtResource("2_ad0ks")

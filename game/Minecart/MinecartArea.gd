@@ -1,9 +1,9 @@
 extends Area2D
 
 ## Variables
-@onready var minecart_inventory : PlayerInventory = preload("res://Inventory/MinecartInventory.tres")
-@onready var player_1_inventory : PlayerInventory = preload("res://Inventory/PlayerInventory1.tres")
-@onready var player_2_inventory : PlayerInventory = preload("res://Inventory/PlayerInventory2.tres")
+@export var minecart_inventory : PlayerInventory 
+@export var player_1_inventory : PlayerInventory 
+@export var player_2_inventory : PlayerInventory
 
 ## Functions
 func _ready():
