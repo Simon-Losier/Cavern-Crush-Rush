@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfpdwwamiuqso"]
+[gd_scene load_steps=12 format=3 uid="uid://cfpdwwamiuqso"]
 
 [ext_resource type="Script" path="res://Minecart/MinecartMovement.gd" id="1_b1qmp"]
 [ext_resource type="Texture2D" uid="uid://dvkdm1os3vmta" path="res://Artwork/Tiles/tile_0054.png" id="1_fkgr7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cng65lfiy5h3r" path="res://Inventory/MinecartInventory.tres" id="4_vanvq"]
 [ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="5_revmu"]
 [ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="6_l886j"]
+[ext_resource type="AudioStream" uid="uid://bnae2qrftqa2x" path="res://Sound/SFX/Minecart.wav" id="7_7p6jj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqtyn"]
 size = Vector2(20, 10)
@@ -61,3 +62,8 @@ player_2_inventory = ExtResource("6_l886j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemArea"]
 shape = SubResource("CircleShape2D_vgnhy")
 debug_color = Color(0.0352941, 0.701961, 0, 0.419608)
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_7p6jj")
+volume_db = 5.0
