@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2sohacy78iv6"]
+
+[ext_resource type="Texture2D" uid="uid://8seu3axa72ax" path="res://Artwork/Individual Art/tile_0045.png" id="1_bg2y0"]
+[ext_resource type="Script" path="res://Objects/Door.gd" id="1_cki27"]
+[ext_resource type="Texture2D" uid="uid://bsgub53j6tra3" path="res://Artwork/Individual Art/tile_0033.png" id="2_r53nr"]
+[ext_resource type="SpriteFrames" uid="uid://bqci72dl7i38r" path="res://Resources/Sprite.tres" id="4_ktbc4"]
+[ext_resource type="SpriteFrames" uid="uid://vcyv8jgh3b43" path="res://Resources/bottom fountain.tres" id="5_si02p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3cqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bg2y0")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r53nr")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkyw2"]
+size = Vector2(16, 21)
+
+[node name="Door Group" type="Area2D"]
+script = ExtResource("1_cki27")
+
+[node name="Door2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o3cqr")
+animation = &"closed"
+
+[node name="LH" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 0)
+sprite_frames = ExtResource("4_ktbc4")
+animation = &"closed"
+
+[node name="LF" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, 16)
+sprite_frames = ExtResource("5_si02p")
+animation = &"closed"
+
+[node name="RH" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 0)
+sprite_frames = ExtResource("4_ktbc4")
+animation = &"closed"
+
+[node name="RF" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = ExtResource("5_si02p")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lkyw2")
