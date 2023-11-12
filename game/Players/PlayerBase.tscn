@@ -16,6 +16,7 @@ script = ExtResource("1_1ch4e")
 shape = SubResource("RectangleShape2D_ytfv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
 texture = ExtResource("1_ivnt3")
 region_enabled = true
 region_rect = Rect2(48, 112, 16, 16)
