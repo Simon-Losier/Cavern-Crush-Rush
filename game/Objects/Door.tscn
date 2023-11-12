@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cb8tfxhlalqg8"]
+[gd_scene load_steps=12 format=3 uid="uid://cb8tfxhlalqg8"]
 
 [ext_resource type="Texture2D" uid="uid://8seu3axa72ax" path="res://Artwork/Individual Art/tile_0045.png" id="1_bg2y0"]
 [ext_resource type="Script" path="res://Objects/Door.gd" id="1_cki27"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dsduuwn7yuj8p" path="res://Objects/DoorDataFile.tres" id="4_aa351"]
 [ext_resource type="SpriteFrames" uid="uid://bqci72dl7i38r" path="res://Resources/Sprite.tres" id="4_ktbc4"]
 [ext_resource type="SpriteFrames" uid="uid://vcyv8jgh3b43" path="res://Resources/bottom fountain.tres" id="5_si02p"]
+[ext_resource type="AudioStream" uid="uid://dwc7fk8ioxjed" path="res://Sound/SFX/Crafting.wav" id="9_y6bua"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3cqr"]
 animations = [{
@@ -71,3 +72,7 @@ animation = &"closed"
 [node name="DoorArea" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_lkyw2")
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_y6bua")

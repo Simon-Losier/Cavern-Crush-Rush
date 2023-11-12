@@ -6,6 +6,7 @@ extends Marker2D
 
 @onready var bomb_item : ItemData = preload("res://Inventory/BombData.tres")
 @onready var bomb_scene : PackedScene = preload("res://Items/bomb.tscn")
+@onready var bomb_sound = %BombFuse
 
 ## Functions
 func _physics_process(delta):
@@ -20,3 +21,4 @@ func _place_bomb():
 		var new_bomb = bomb_scene.instantiate()
 		new_bomb.set_transform(get_global_transform())
 		get_tree().get_root().add_child(new_bomb)
+		bomb_sound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sby0qln57wwd"]
+[gd_scene load_steps=10 format=3 uid="uid://sby0qln57wwd"]
 
 [ext_resource type="Script" path="res://Objects/chest.gd" id="1_cvgf8"]
 [ext_resource type="Texture2D" uid="uid://cosqntvrmmytq" path="res://Artwork/Individual Art/tile_0089.png" id="1_mf870"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="3_2cx46"]
 [ext_resource type="Texture2D" uid="uid://0l8f1jen70ri" path="res://Artwork/Individual Art/tile_0090.png" id="3_nd5tn"]
 [ext_resource type="Texture2D" uid="uid://djs45finl318r" path="res://Artwork/Individual Art/tile_0091.png" id="4_omx82"]
+[ext_resource type="AudioStream" uid="uid://dvlvfi68knwgf" path="res://Sound/SFX/Place.wav" id="7_688hg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4vy8a"]
 animations = [{
@@ -47,5 +48,9 @@ animation = &"nothing"
 shape = SubResource("CircleShape2D_edsrl")
 
 [node name="Chest" type="Node2D" parent="."]
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_688hg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
