@@ -5,6 +5,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_yyeaj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_758dt"]
+font_size = 10
 
 [node name="ItemDataUI" type="Control"]
 layout_mode = 3
@@ -13,16 +14,17 @@ script = ExtResource("1_cxlpc")
 
 [node name="ImageTextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 24.0
+offset_bottom = 24.0
 texture = SubResource("CanvasTexture_yyeaj")
+expand_mode = 3
 
 [node name="StacksizeLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 21.0
-offset_right = 41.0
-offset_bottom = 47.0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 24.0
+offset_bottom = 30.0
 text = "999
 "
 label_settings = SubResource("LabelSettings_758dt")

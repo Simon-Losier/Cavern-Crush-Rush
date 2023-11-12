@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="PlayerInventory" load_steps=2 format=3 uid="uid://bwi8i4swbkxuh"]
+[gd_resource type="Resource" script_class="PlayerInventory" load_steps=5 format=3 uid="uid://bwi8i4swbkxuh"]
 
+[ext_resource type="Resource" uid="uid://chbf08fb1udxa" path="res://Inventory/GreenOreItemData.tres" id="1_i61n2"]
 [ext_resource type="Script" path="res://Inventory/PlayerInventory.gd" id="1_t5smj"]
+[ext_resource type="Script" path="res://Inventory/InventoryItem.gd" id="2_gd1yd"]
+
+[sub_resource type="Resource" id="Resource_btp8h"]
+script = ExtResource("2_gd1yd")
+item_data = ExtResource("1_i61n2")
+stackszie = 1
+max_stacksize = 32
 
 [resource]
 script = ExtResource("1_t5smj")
-inventory = Array[Resource("res://Inventory/InventoryItem.gd")]([])
+inventory = Array[ExtResource("2_gd1yd")]([SubResource("Resource_btp8h")])

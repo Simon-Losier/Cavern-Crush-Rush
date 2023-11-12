@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfpdwwamiuqso"]
+
+[ext_resource type="Script" path="res://Minecart/MinecartMovement.gd" id="1_b1qmp"]
+[ext_resource type="Texture2D" uid="uid://dvkdm1os3vmta" path="res://Artwork/Tiles/tile_0054.png" id="1_fkgr7"]
+[ext_resource type="Script" path="res://Minecart/MinecartArea.gd" id="3_yrkf8"]
+[ext_resource type="Resource" uid="uid://cng65lfiy5h3r" path="res://Inventory/MinecartInventory.tres" id="4_vanvq"]
+[ext_resource type="Resource" uid="uid://bwi8i4swbkxuh" path="res://Inventory/PlayerInventory1.tres" id="5_revmu"]
+[ext_resource type="Resource" uid="uid://fj4wdi8riiud" path="res://Inventory/PlayerInventory2.tres" id="6_l886j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqtyn"]
+size = Vector2(16, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjl4o"]
+size = Vector2(16, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np10a"]
+size = Vector2(16, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgnhy"]
+radius = 20.0
+
+[node name="Minecart" type="RigidBody2D"]
+z_index = 2
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 18
+gravity_scale = 0.0
+custom_integrator = true
+script = ExtResource("1_b1qmp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fkgr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_nqtyn")
+
+[node name="VerticalCollisions" type="StaticBody2D" parent="."]
+collision_layer = 36
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VerticalCollisions"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_wjl4o")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VerticalCollisions"]
+position = Vector2(0, 3.5)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_np10a")
+one_way_collision = true
+
+[node name="ItemArea" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("3_yrkf8")
+minecart_inventory = ExtResource("4_vanvq")
+player_1_inventory = ExtResource("5_revmu")
+player_2_inventory = ExtResource("6_l886j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemArea"]
+shape = SubResource("CircleShape2D_vgnhy")

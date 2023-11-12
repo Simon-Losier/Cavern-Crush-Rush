@@ -9,21 +9,20 @@ noise = SubResource("FastNoiseLite_5pv6f")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ab8ro"]
 shader = ExtResource("1_pqrot")
-shader_parameter/numPixels = 16.0
 shader_parameter/outerColor = Color(1, 0, 0, 1)
 shader_parameter/innerColor = Color(1, 0.6, 0, 1)
 shader_parameter/colorThreshold = 0.08
-shader_parameter/noiseStrength = 0.07
-shader_parameter/topWidth = -0.175
-shader_parameter/width = 0.115
-shader_parameter/height = 0.34
-shader_parameter/flameCenter = Vector2(0, 0.155)
+shader_parameter/noiseStrength = 0.135
+shader_parameter/topWidth = 0.01
+shader_parameter/width = 0.215
+shader_parameter/height = 0.25
+shader_parameter/flameCenter = Vector2(0, 0.105)
 shader_parameter/noise = SubResource("NoiseTexture2D_rrd6a")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8xfmb"]
 
 [node name="FirePrefab" type="Sprite2D"]
 material = SubResource("ShaderMaterial_ab8ro")
-position = Vector2(4, -4)
-scale = Vector2(8, 8)
+position = Vector2(18.5, -20)
+scale = Vector2(37, 40)
 texture = SubResource("CanvasTexture_8xfmb")
